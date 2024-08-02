@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2021 by safe99 (http://jsbin.com/soguyaq/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Final Project</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=g6dEO7Lkgj85-TWwYEI5v9OmJ1iknubqN0M_SfTvgmMa3cz1_n92fPV7FsMYlZAORl1aWm-F5xa_p1usBo-5MQ" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9qc2Jpbi5jb20vc29ndXlhcS8xL2Rvd25sb2Fk"/><style>
+  .selected{
+    border: 5px solid lightgray;
+  }
+  </style>
+<style id="jsbin-css">
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body{
+	background-color: rgb(118, 115, 115);
+}
+
+.container {
+  width: 1180px
+  max-width: 100%;
+  margin: 0;
+  position: relative;
+  text-align: left;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+header {
+  background: #5D1707;
+  color: white;
+  
+}
+
+header .grid {
+  text-align: left;
+ 
+}
+
+header h2{
+  font-size: 35px;
+  text-align: left;
+  padding-left: 25px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+header h1{
+  font-size: 25px;
+  text-align: left; 
+  padding-bottom: 20px;
+}
+
+topbar .grid {
+  text-align:left;
+  width: 100%;
+  background: black;
+  text-align: left;
+  padding: 3px;
+  margin: 0;
+}
+
+topbar a{
+  color: white;
+  text-decoration:none;
+  text-align: left;
+}
+topbar .menu {
+  width:100%;
+  text-align: center;
+  font-weight: 200;
+  line-height:30px;
+  
+}
+
+.menu a{
+  
+  text-align: left;
+  color: white;
+  font-size: 20px;
+  line-height: inherit;
+  padding: 0 10px;
+  text-decoration: none;
+
+}
+
+.menu-item{
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  text-decoration:none;
+  margin-left: 30px;
+  margin-right 30px;
+}
+
+
+
+.menu-item:hover {
+  background-color: #9B290F;
+}
+
+
+.menu-item:hover .submenu,
+.menu-item:focus .submenu{
+  display: block;
+ z-index: 9999999
+}
+
+.card img{
+  max-height:500px;
+}
+
+.about{
+  display: none;
+}
+
+.about h2{
+  text-align:center;
+  font-size:25px;
+  background: tan;
+  padding: 10px;
+}
+
+.about h3{
+  color:tan;
+  font-size: 20px;
+  background: black;
+  padding: 10px;
+}
+
+news h2{
+  padding: 30px;
+  text-align: center;
+  color: #5D1707;
+  font-size: 30px;
+}
+
+news h1{
+  font-size: 20px;
+  color: #5D1707;
+  margin: 5px;
+  text-align: center;
+}
+
+news .grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 40px;
+  margin: 0px 150px 0px 150px;
+}
+
+.news .grid .news-card {
+  border: 1px solid black;
+  padding: 10px;
+  
+}
+
+news .grid .news-card img{
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+
+news img{
+  width:100%;
+  max-width: 100%;
+}
+
+
+
+bottom .grid{
+  background: #5D1707;
+  padding: 15px 40px 15px 40px;
+}
+bottom h3{
+  text-align:center;
+  color:white;
+  font-size: 10px;
+  padding: 5px;
+  
+}
+
+bottom a{
+  color: #ffd303;
+}
+
+reddit .grid{
+  background:tan;
+  font-size: 25px
+}
+
+.padded {
+	padding: 10px;
+}
+
+.post {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+  margin: 10px;
+}
+
+.content{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+movie{
+  background-color:rgb(118, 115, 115);
+}
+
+movie h2{
+  font-size:30px;
+  color:white;
+  text-align: center
+}
+
+movie .grid img{
+  width: 100%;
+  max-width:100%;
+  max-height: 700px;
+  text-align: center;
+  padding: 10px;
+}
+
+movie .grid iframe{
+  width:100%;
+  max-height:700px;
+}
+
+see_also h2{
+  font-size:30px;
+  color:darkgreen;
+  text-align: center
+  Padding: 20px;
+}
+
+see_also .grid img{
+  width: 100%;
+  max-width:100%;
+  max-height: 100%;
+  text-align: center;
+}
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  header .grid{
+   grid-template-columns:100%;
+}
+  header h2{
+    text-align: center;
+  }
+  
+  header p{
+    text-align: center;
+  }
+  
+   topbar .grid{
+    grid-template-columns:repeat(1, 1fr);
+    
+  }
+  topbar .menu-item {
+    display: block;
+    width: 100%;
+    margin: 0;
+    text-align: left;
+  }
+  
+  news .grid{
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0px 30px 0px 30px
+    }
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+  
+  <header>
+    <section class="grid">
+      <div class="container">
+      </div>
+      <h2> Breaking Bad | Best TV Shows </h2>
+    </section>
+  </header>
+  
+  <topbar>
+    <section class="grid">
+      <div class="container">
+        
+        <ul class="menu">
+          <li class="menu-item"><a href="">The     Office</a>
+        </li>
+        <li class="menu-item"><a href="">Breaking           Bad</a>
+        </li>
+          <li class="menu-item"><a href="">Two and a Half Man</a>
+        </li>
+        <li class="menu-item"><a href="">House of Cards</a>
+        </li>
+        </ul>
+      </div>
+    </section>
+  </topbar>
+  
+  <div class="card">
+  <img src="https://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2019/01/15/Pictures/_e882c104-18a3-11e9-b6e9-9c4bb39de67f.jpg" alt="breaking bad banner" style="width: 100%;">
+  <section class="about">
+  <h2>Synopsis</h2>
+  <h3>Mild-mannered high school chemistry teacher Walter White thinks his life can't get much worse. His salary barely makes ends meet, a situation not likely to improve once his pregnant wife gives birth, and their teenage son is battling cerebral palsy. But Walter is dumbstruck when he learns he has terminal cancer. Realizing that his illness probably will ruin his family financially, Walter makes a desperate bid to earn as much money as he can in the time he has left by turning an old RV into a meth lab on wheels.</h3>
+  </section>
+  </div>
+  
+  
+  <reddit>
+    <section class="grid">
+    <div class="posts">
+      <h2>Search the subreddit for posts!</h2>
+      <input type="text" placeholder="Enter a keyword" id="keyword">
+      <button type="button" class="btn btn-success">Search</button>  
+    </div>
+    
+    <hr>
+      
+    <div class="container">
+      <div class="content"></div>  
+    </div>
+    </section>
+  </reddit>
+  
+  
+  <movie>
+    <section class="grid">
+      <h2>Watch the movie!</h2>
+      <img src="https://occ-0-300-299.1.nflxso.net/dnm/api/v6/XsrytRUxks8BtTRf9HNlZkW2tvY/AAAABbro5vS-AYs9R_kOCxJd3N8haOPoRgMXLp4YuWupkeOi12gy_xghwZnc0G6qS2OaMfF8SOZJ9bZ0PoPm2EYCJ8rQeexwKfo_VbiOWZjLdQ3kKuj5thy0cTvyhvcpfw.jpg" alt="el camino movie picture">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Xw7Aii1Fyq4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+  </movie>
+  
+  <see_also>
+    <section class="grid">
+    <h2>See also:</h2>
+    <img src="https://images-na.ssl-images-amazon.com/images/I/81+HloHHyuL._RI_.jpg" alt="Better Call Saul TV show picture">
+    </section>
+  </see_also>
+  
+  
+  
+  
+  
+  
+    <bottom>
+    <section class="grid">
+      <div class="container">
+          <h3>Copyright © 2019 Web Design, USA Inc. All rights reserved. <a href="">Terms of Use</a> | <a href="">Privacy Police - REVISED </a>  </h3>
+        <h3> Created by Kaishini Ragumar, Rohail Ahmed, Yunhao He and Wesley Borke </h3>
+        </div>
+        <div class="link">
+      </div>
+    </section>
+  </bottom>
+  
+  
+  
+  
+  
+  
+  
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script id="jsbin-javascript">
+$(document).ready(function() {
+  
+  $('.btn').on('click', function() {
+    var keyword = $('#keyword');
+    var keywordText = keyword.val() !== '' ? keyword.val() : 'walter';
+    
+    $('.content').text('loading . . .');
+  
+    $.ajax({
+      type: 'GET',
+      url: 'https://www.reddit.com/r/breakingbad/search.json',
+      data: {
+        q: keywordText,
+        restrict_sr: true
+      },
+      success: function(response) {
+        $('#keyword').val(keywordText);
+        var posts = $(response.data.children);
+        
+        $('.content').text('');
+        
+        posts.each(function(i, post) {
+          if (post.data.thumbnail !== 'self' && post.data.thumbnail !== 'default') {
+            $('.content').append(`<div class="post"><img class="padded" src="${post.data.thumbnail}" /><p>${post.data.title}</p>
+            </div>`);
+            
+          }
+        });
+      },
+      error: function(response) {
+        $('.content').text('There was a problem getting data.');
+        console.log(response.statusCode());
+      }
+    });
+  
+  });
+  
+});
+
+$(function() {
+  
+  $(".card img").addClass("selected");
+  
+  $('.card img').on('click', function() {
+    
+    let el = $(this);
+    
+    if (el.next().css('display') === 'none') {
+      el.next().show();
+      $(".card img").removeClass("selected");
+    } else {
+      el.next().hide();
+       $(".card img").addClass("selected");
+    }
+    
+    
+  });
+  
+});
+</script>
+</body>
+</html>
